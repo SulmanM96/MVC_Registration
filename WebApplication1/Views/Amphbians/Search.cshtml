@@ -1,0 +1,32 @@
+﻿
+
+@{
+    ViewBag.Title = "Search";
+}
+
+<h2>Search</h2>
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Search for Amphbian</h4>
+        <hr />
+        
+        <div class="form-group">
+            @Html.Label("Enter Amphbian Id", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+               <input type="text" name="id" value="" size="25" /> 
+           </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}

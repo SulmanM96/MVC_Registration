@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="AnimalDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Amphbians">
+    <Key>
+      <PropertyRef Name="AmphbiansID" />
+    </Key>
+    <Property Name="Animal" Type="varchar" MaxLength="250" />
+    <Property Name="SurviveOnLand" Type="varchar" MaxLength="250" />
+    <Property Name="Pop" Type="int" />
+    <Property Name="Dietry" Type="varchar" MaxLength="250" />
+    <Property Name="AmphbiansID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Arthropods">
+    <Key>
+      <PropertyRef Name="ArthropodsID" />
+    </Key>
+    <Property Name="Animal" Type="varchar" MaxLength="250" />
+    <Property Name="HasFur" Type="varchar" MaxLength="250" />
+    <Property Name="Pop" Type="int" />
+    <Property Name="Dietry" Type="varchar" MaxLength="250" />
+    <Property Name="ArthropodsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Birds">
+    <Key>
+      <PropertyRef Name="BirdsID" />
+    </Key>
+    <Property Name="Animal" Type="varchar" MaxLength="250" />
+    <Property Name="CanFly" Type="varchar" MaxLength="250" />
+    <Property Name="Pop" Type="int" />
+    <Property Name="Dietry" Type="varchar" MaxLength="250" />
+    <Property Name="BirdsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ClassfiedAsEndangered">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="AnimalName" Type="nchar" MaxLength="10" />
+    <Property Name="ClassifiedAs" Type="nchar" MaxLength="10" />
+    <Property Name="Population" Type="nchar" MaxLength="10" />
+    <Property Name="AnimalKingdom" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Fish">
+    <Key>
+      <PropertyRef Name="FishID" />
+    </Key>
+    <Property Name="Animal" Type="varchar" MaxLength="250" />
+    <Property Name="SurviveOutOfWater" Type="varchar" MaxLength="250" />
+    <Property Name="Pop" Type="int" />
+    <Property Name="Dietry" Type="varchar" MaxLength="250" />
+    <Property Name="FishID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Mammals">
+    <Key>
+      <PropertyRef Name="MammalID" />
+    </Key>
+    <Property Name="Animal" Type="varchar" MaxLength="250" />
+    <Property Name="UnderwaterSurvivabilty" Type="varchar" MaxLength="250" />
+    <Property Name="Pop" Type="int" />
+    <Property Name="Dietry" Type="varchar" MaxLength="250" />
+    <Property Name="MammalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Reptiles">
+    <Key>
+      <PropertyRef Name="ReptilesID" />
+    </Key>
+    <Property Name="Animal" Type="varchar" MaxLength="250" />
+    <Property Name="Camouflage" Type="varchar" MaxLength="250" />
+    <Property Name="Pop" Type="int" />
+    <Property Name="Dietry" Type="varchar" MaxLength="250" />
+    <Property Name="ReptilesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityContainer Name="AnimalDBModelStoreContainer">
+    <EntitySet Name="Amphbians" EntityType="Self.Amphbians" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Arthropods" EntityType="Self.Arthropods" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Birds" EntityType="Self.Birds" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ClassfiedAsEndangered" EntityType="Self.ClassfiedAsEndangered" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Fish" EntityType="Self.Fish" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Mammals" EntityType="Self.Mammals" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Reptiles" EntityType="Self.Reptiles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

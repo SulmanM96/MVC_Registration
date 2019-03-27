@@ -1,0 +1,50 @@
+﻿@model WebApplication1.Reptile
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Reptile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Animal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Animal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Camouflage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Camouflage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pop)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dietry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dietry)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ReptilesID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

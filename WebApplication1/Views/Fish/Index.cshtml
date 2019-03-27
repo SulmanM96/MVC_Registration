@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WebApplication1.Fish>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Animal)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SurviveOutOfWater)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Pop)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Dietry)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Animal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SurviveOutOfWater)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Pop)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Dietry)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.FishID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.FishID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.FishID })
+        </td>
+    </tr>
+}
+
+</table>

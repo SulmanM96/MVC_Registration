@@ -1,0 +1,309 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AnimalDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Amphbians">
+          <Key>
+            <PropertyRef Name="AmphbiansID" />
+          </Key>
+          <Property Name="Animal" Type="varchar" MaxLength="250" />
+          <Property Name="SurviveOnLand" Type="varchar" MaxLength="250" />
+          <Property Name="Pop" Type="int" />
+          <Property Name="Dietry" Type="varchar" MaxLength="250" />
+          <Property Name="AmphbiansID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Arthropods">
+          <Key>
+            <PropertyRef Name="ArthropodsID" />
+          </Key>
+          <Property Name="Animal" Type="varchar" MaxLength="250" />
+          <Property Name="HasFur" Type="varchar" MaxLength="250" />
+          <Property Name="Pop" Type="int" />
+          <Property Name="Dietry" Type="varchar" MaxLength="250" />
+          <Property Name="ArthropodsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Birds">
+          <Key>
+            <PropertyRef Name="BirdsID" />
+          </Key>
+          <Property Name="Animal" Type="varchar" MaxLength="250" />
+          <Property Name="CanFly" Type="varchar" MaxLength="250" />
+          <Property Name="Pop" Type="int" />
+          <Property Name="Dietry" Type="varchar" MaxLength="250" />
+          <Property Name="BirdsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ClassfiedAsEndangered">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" />
+          <Property Name="AnimalName" Type="nchar" MaxLength="10" />
+          <Property Name="ClassifiedAs" Type="nchar" MaxLength="10" />
+          <Property Name="Population" Type="nchar" MaxLength="10" />
+          <Property Name="AnimalKingdom" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Fish">
+          <Key>
+            <PropertyRef Name="FishID" />
+          </Key>
+          <Property Name="Animal" Type="varchar" MaxLength="250" />
+          <Property Name="SurviveOutOfWater" Type="varchar" MaxLength="250" />
+          <Property Name="Pop" Type="int" />
+          <Property Name="Dietry" Type="varchar" MaxLength="250" />
+          <Property Name="FishID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mammals">
+          <Key>
+            <PropertyRef Name="MammalID" />
+          </Key>
+          <Property Name="Animal" Type="varchar" MaxLength="250" />
+          <Property Name="UnderwaterSurvivabilty" Type="varchar" MaxLength="250" />
+          <Property Name="Pop" Type="int" />
+          <Property Name="Dietry" Type="varchar" MaxLength="250" />
+          <Property Name="MammalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Reptiles">
+          <Key>
+            <PropertyRef Name="ReptilesID" />
+          </Key>
+          <Property Name="Animal" Type="varchar" MaxLength="250" />
+          <Property Name="Camouflage" Type="varchar" MaxLength="250" />
+          <Property Name="Pop" Type="int" />
+          <Property Name="Dietry" Type="varchar" MaxLength="250" />
+          <Property Name="ReptilesID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityContainer Name="AnimalDBModelStoreContainer">
+          <EntitySet Name="Amphbians" EntityType="Self.Amphbians" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Arthropods" EntityType="Self.Arthropods" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Birds" EntityType="Self.Birds" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ClassfiedAsEndangered" EntityType="Self.ClassfiedAsEndangered" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fish" EntityType="Self.Fish" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mammals" EntityType="Self.Mammals" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reptiles" EntityType="Self.Reptiles" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="AnimalDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Amphbian">
+          <Key>
+            <PropertyRef Name="AmphbiansID" />
+          </Key>
+          <Property Name="Animal" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SurviveOnLand" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Pop" Type="Int32" />
+          <Property Name="Dietry" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="AmphbiansID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Arthropod">
+          <Key>
+            <PropertyRef Name="ArthropodsID" />
+          </Key>
+          <Property Name="Animal" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="HasFur" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Pop" Type="Int32" />
+          <Property Name="Dietry" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ArthropodsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Bird">
+          <Key>
+            <PropertyRef Name="BirdsID" />
+          </Key>
+          <Property Name="Animal" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CanFly" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Pop" Type="Int32" />
+          <Property Name="Dietry" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="BirdsID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Fish">
+          <Key>
+            <PropertyRef Name="FishID" />
+          </Key>
+          <Property Name="Animal" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SurviveOutOfWater" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Pop" Type="Int32" />
+          <Property Name="Dietry" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="FishID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Mammal">
+          <Key>
+            <PropertyRef Name="MammalID" />
+          </Key>
+          <Property Name="Animal" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="UnderwaterSurvivabilty" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Pop" Type="Int32" />
+          <Property Name="Dietry" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="MammalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="Reptile">
+          <Key>
+            <PropertyRef Name="ReptilesID" />
+          </Key>
+          <Property Name="Animal" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Camouflage" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Pop" Type="Int32" />
+          <Property Name="Dietry" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ReptilesID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityContainer Name="AnimalDBEntities3" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Amphbians" EntityType="Self.Amphbian" />
+          <EntitySet Name="Arthropods" EntityType="Self.Arthropod" />
+          <EntitySet Name="Birds" EntityType="Self.Bird" />
+          <EntitySet Name="Fish" EntityType="Self.Fish" />
+          <EntitySet Name="Mammals" EntityType="Self.Mammal" />
+          <EntitySet Name="Reptiles" EntityType="Self.Reptile" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="ClassfiedAsEndangereds" EntityType="AnimalDBModel.ClassfiedAsEndangered" />
+        </EntityContainer>
+        <EntityType Name="ClassfiedAsEndangered">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" />
+          <Property Name="AnimalName" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ClassifiedAs" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Population" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="AnimalKingdom" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="AnimalDBModelStoreContainer" CdmEntityContainer="AnimalDBEntities3">
+          <EntitySetMapping Name="Amphbians">
+            <EntityTypeMapping TypeName="AnimalDBModel.Amphbian">
+              <MappingFragment StoreEntitySet="Amphbians">
+                <ScalarProperty Name="Animal" ColumnName="Animal" />
+                <ScalarProperty Name="SurviveOnLand" ColumnName="SurviveOnLand" />
+                <ScalarProperty Name="Pop" ColumnName="Pop" />
+                <ScalarProperty Name="Dietry" ColumnName="Dietry" />
+                <ScalarProperty Name="AmphbiansID" ColumnName="AmphbiansID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Arthropods">
+            <EntityTypeMapping TypeName="AnimalDBModel.Arthropod">
+              <MappingFragment StoreEntitySet="Arthropods">
+                <ScalarProperty Name="Animal" ColumnName="Animal" />
+                <ScalarProperty Name="HasFur" ColumnName="HasFur" />
+                <ScalarProperty Name="Pop" ColumnName="Pop" />
+                <ScalarProperty Name="Dietry" ColumnName="Dietry" />
+                <ScalarProperty Name="ArthropodsID" ColumnName="ArthropodsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Birds">
+            <EntityTypeMapping TypeName="AnimalDBModel.Bird">
+              <MappingFragment StoreEntitySet="Birds">
+                <ScalarProperty Name="Animal" ColumnName="Animal" />
+                <ScalarProperty Name="CanFly" ColumnName="CanFly" />
+                <ScalarProperty Name="Pop" ColumnName="Pop" />
+                <ScalarProperty Name="Dietry" ColumnName="Dietry" />
+                <ScalarProperty Name="BirdsID" ColumnName="BirdsID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fish">
+            <EntityTypeMapping TypeName="AnimalDBModel.Fish">
+              <MappingFragment StoreEntitySet="Fish">
+                <ScalarProperty Name="Animal" ColumnName="Animal" />
+                <ScalarProperty Name="SurviveOutOfWater" ColumnName="SurviveOutOfWater" />
+                <ScalarProperty Name="Pop" ColumnName="Pop" />
+                <ScalarProperty Name="Dietry" ColumnName="Dietry" />
+                <ScalarProperty Name="FishID" ColumnName="FishID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Mammals">
+            <EntityTypeMapping TypeName="AnimalDBModel.Mammal">
+              <MappingFragment StoreEntitySet="Mammals">
+                <ScalarProperty Name="Animal" ColumnName="Animal" />
+                <ScalarProperty Name="UnderwaterSurvivabilty" ColumnName="UnderwaterSurvivabilty" />
+                <ScalarProperty Name="Pop" ColumnName="Pop" />
+                <ScalarProperty Name="Dietry" ColumnName="Dietry" />
+                <ScalarProperty Name="MammalID" ColumnName="MammalID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Reptiles">
+            <EntityTypeMapping TypeName="AnimalDBModel.Reptile">
+              <MappingFragment StoreEntitySet="Reptiles">
+                <ScalarProperty Name="Animal" ColumnName="Animal" />
+                <ScalarProperty Name="Camouflage" ColumnName="Camouflage" />
+                <ScalarProperty Name="Pop" ColumnName="Pop" />
+                <ScalarProperty Name="Dietry" ColumnName="Dietry" />
+                <ScalarProperty Name="ReptilesID" ColumnName="ReptilesID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="AnimalDBModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ClassfiedAsEndangereds">
+            <EntityTypeMapping TypeName="AnimalDBModel.ClassfiedAsEndangered">
+              <MappingFragment StoreEntitySet="ClassfiedAsEndangered">
+                <ScalarProperty Name="AnimalKingdom" ColumnName="AnimalKingdom" />
+                <ScalarProperty Name="Population" ColumnName="Population" />
+                <ScalarProperty Name="ClassifiedAs" ColumnName="ClassifiedAs" />
+                <ScalarProperty Name="AnimalName" ColumnName="AnimalName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,56 @@
+﻿@model WebApplication1.Reptile
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Reptile</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Animal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Animal)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Camouflage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Camouflage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Pop)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Pop)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Dietry)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Dietry)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
