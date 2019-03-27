@@ -1,6 +1,5 @@
 # MVC_Registration
-Created a basic website from the model first method to see how differnet it is from the databse first model
-
+Created a basic website from the model first method to see how different it is from the database first model
 Prerequisites
 Visual Studio Basic
 
